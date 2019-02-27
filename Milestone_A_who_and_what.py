@@ -73,14 +73,14 @@ Team:
 
 # Change the following to represent your own information:
 
-maggie = Partner("Smith", "Margaret", "maggiesmith99")
+brian = Partner("Yu", "Brian", "brianpyu")
 john = Partner("Doe", "John", "jd007")
-team = [maggie, john]
+team = [brian, john]
 
-OPTION = '1'
+OPTION = '2'
 # Legal options are 1, 2, and 3.
 
-title = "A Blustering Baroque Chess Player"
+title = "Something Something Rubik's Cube"
 
 approach = '''Our approach will be to first understand the rules,
 then code our move generator, develop a static evaluation function,
@@ -100,7 +100,7 @@ reference1 = '''Wikipedia article on Baroque Chess;
 reference2 = '''"What\'s Wrong with Ultima," by Robert Abbott,
     available online at: http://www.logicmazes.com/games/wgr.html'''
 
-our_submission = Who_and_what([maggie, john], OPTION, title, approach, workload_distribution, [reference1, reference2])
+our_submission = Who_and_what([brian, john], OPTION, title, approach, workload_distribution, [reference1, reference2])
 
 # You can run this file from the command line by typing:
 # python3 who_and_what.py
