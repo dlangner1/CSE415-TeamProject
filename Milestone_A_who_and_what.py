@@ -3,6 +3,11 @@
 This runnable file will provide a representation of
 answers to key questions about your project in CSE 415.
 
+Dustin Langner & Brian Yu
+CSE 415, Winter 2019
+Milestone A
+03/01/2019
+
 '''
 
 # DO NOT EDIT THE BOILERPLATE PART OF THIS FILE HERE:
@@ -73,11 +78,11 @@ Team:
 
 # Change the following to represent your own information:
 
-maggie = Partner("Smith", "Margaret", "maggiesmith99")
-john = Partner("Doe", "John", "jd007")
-team = [maggie, john]
+dustin = Partner("Langner", "Dustin", "dlangner")
+brian = Partner("Yu", "Brian", "brianpyu")
+team = [dustin, brian]
 
-OPTION = '1'
+OPTION = '2'
 # Legal options are 1, 2, and 3.
 
 title = "A Blustering Baroque Chess Player"
@@ -100,7 +105,7 @@ reference1 = '''Wikipedia article on Baroque Chess;
 reference2 = '''"What\'s Wrong with Ultima," by Robert Abbott,
     available online at: http://www.logicmazes.com/games/wgr.html'''
 
-our_submission = Who_and_what([maggie, john], OPTION, title, approach, workload_distribution, [reference1, reference2])
+our_submission = Who_and_what(team, OPTION, title, approach, workload_distribution, [reference1, reference2])
 
 # You can run this file from the command line by typing:
 # python3 who_and_what.py
