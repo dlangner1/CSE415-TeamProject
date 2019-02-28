@@ -100,9 +100,8 @@ the optimizations of alpha-beta pruning and Zobrist hashing, and both
 partners expect to be closely involved in writing the move-generation
 code and defining the personality of the agent.'''
 
-# TODO: Fill in this reference #1
-reference1 = '''Wikipedia article on Baroque Chess;
-    URL: https://en.wikipedia.org/wiki/Baroque_chess (accessed Feb. 22, 2018)'''
+reference1 = '''"Artificial Intelligence: Foundations of computational agents" 
+by David Poole & Alan Mackworth. Can be found at: https://artint.info/html/ArtInt.html'''
 
 reference2 = '''"Finding Optimal Solutions to Rubik\'s Cube Using Pattern Databases," 
 by Richard E. Korf. Provided on the CSE 415 website at: 
