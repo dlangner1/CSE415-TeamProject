@@ -88,11 +88,11 @@ OPTION = '2'
 
 title = "Something Something Rubik's Cube"
 
-approach = '''Our approach will be to first understand the rules,
-then code our move generator, develop a static evaluation function,
-a personality for the agent, and then optimize using alpha-beta
-pruning, Zobrist hashing, and comparison of alternative static
-evaluation functions.'''
+approach = '''Our approach will be to first understand the state space and 
+all the legal Rubik\'s Cube moves, to understand conceptually how specific 
+optimizations can be applied to exploring the Rubik\'s Cube state space, 
+develop a basic solver, then add options for a variable number of optimizations 
+(i.e. Feature-based state representations, 180-degree moves, heuristics, etc)'''
 
 workload_distribution = '''Maggie will have primary responsibility for the 
 static evaluation function, John will have primary responsibility for
@@ -100,11 +100,13 @@ the optimizations of alpha-beta pruning and Zobrist hashing, and both
 partners expect to be closely involved in writing the move-generation
 code and defining the personality of the agent.'''
 
+# TODO: Fill in this reference #1
 reference1 = '''Wikipedia article on Baroque Chess;
     URL: https://en.wikipedia.org/wiki/Baroque_chess (accessed Feb. 22, 2018)'''
 
-reference2 = '''"What\'s Wrong with Ultima," by Robert Abbott,
-    available online at: http://www.logicmazes.com/games/wgr.html'''
+reference2 = '''"Finding Optimal Solutions to Rubik\'s Cube Using Pattern Databases," 
+by Richard E. Korf. Provided on the CSE 415 website at: 
+https://courses.cs.washington.edu/courses/cse415/19wi/uwnetid/proj/korfrubik.pdf'''
 
 our_submission = Who_and_what(team, OPTION, title, approach, workload_distribution, [reference1, reference2])
 
