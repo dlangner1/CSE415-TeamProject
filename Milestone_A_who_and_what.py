@@ -86,7 +86,7 @@ team = [brian, dustin]
 OPTION = '2'
 # Legal options are 1, 2, and 3.
 
-title = "Something Something Rubik's Cube"
+title = "Rubik's Dude"
 
 approach = '''Our approach will be to first understand the state space and 
 all the legal Rubik\'s Cube moves, to understand conceptually how specific 
@@ -94,11 +94,10 @@ optimizations can be applied to exploring the Rubik\'s Cube state space,
 develop a basic solver, then add options for a variable number of optimizations 
 (i.e. Feature-based state representations, 180-degree moves, heuristics, etc)'''
 
-workload_distribution = '''Maggie will have primary responsibility for the 
-static evaluation function, John will have primary responsibility for
-the optimizations of alpha-beta pruning and Zobrist hashing, and both
-partners expect to be closely involved in writing the move-generation
-code and defining the personality of the agent.'''
+workload_distribution = '''Brian will work on the problem formulation file.
+Dustin will work on the Markov Decision Process definition. They will each pick
+one of value iteration or Q-learning for the MDP. Together, they will design
+a GUI to make gameplay more aesthetically pleasing.'''
 
 reference1 = '''"Artificial Intelligence: Foundations of computational agents" 
 by David Poole & Alan Mackworth. Can be found at: https://artint.info/html/ArtInt.html'''
