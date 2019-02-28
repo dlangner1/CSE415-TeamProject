@@ -78,14 +78,15 @@ Team:
 
 # Change the following to represent your own information:
 
-dustin = Partner("Langner", "Dustin", "dlangner")
+
 brian = Partner("Yu", "Brian", "brianpyu")
-team = [dustin, brian]
+dustin = Partner("Langner", "Dustin", "dlangner")
+team = [brian, dustin]
 
 OPTION = '2'
 # Legal options are 1, 2, and 3.
 
-title = "A Blustering Baroque Chess Player"
+title = "Something Something Rubik's Cube"
 
 approach = '''Our approach will be to first understand the rules,
 then code our move generator, develop a static evaluation function,
