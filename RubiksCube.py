@@ -77,23 +77,38 @@ class State:
   def move(self,face):
    
       
-    news = self.copy() # start with a deep copy.
-    curA=self.d['a']
-    curAprime=self.d['aprime']
-    curB=self.d['b']
-    curBprime=self.d['bprime']
-    curC=self.d['c']
-    curCprime=self.d['cprime'] 
+    new_state = self.copy() # start with a deep copy.
+    curA=new_state.d['a']
+    curAprime=new_state.d['aprime']
+    curB=new_state.d['b']
+    curBprime=new_state.d['bprime']
+    curC=new_state.d['c']
+    curCprime=new_state.d['cprime'] 
     #TODO
     if face=='a':
-      
+      new_state.d['a'] = flip(curA)
+      new_state.d['b'] = [curBprime[0], curB[1], curBprime[2], curB[3]]
+      new_state.d['c'] = [curCprime[0], curC[1], curCprime[2], curC[3]]
+      new_state.d['aprime'] = curAprime
+      new_state.d['bprime'] = [curB[0], curBprime[1], curB[2], curBprime[3]]
+      new_state.d['cprime'] = [curC[0], curCprime[1], curC[2], curCprime[3]]
     elif face=='aprime':
-      
-    if face=='b':
-      
+      new_state.d['a'] = curA
+      new_state.d['b'] = [curB[0], curBprime[1], curB[2], curBprime[3]]
+      new_state.d['c'] = [curC[0], curCprime[1], curC[2], curCprime[3]]
+      new_state.d['aprime'] = flip(curAprime)
+      new_state.d['bprime'] = [curBprime[0], curB[1], curBprime[2], curB[3]]
+      new_state.d['cprime'] = [curCprime[0], curC[1], curCprime[2], curC[3]]
+    elif face=='b':
+      new_state.d['a'] = [curAprime[0], curAprime[1], curA[2], curA[3]]
+      new_state.d['b'] = flip(curB)
+      new_state.d['c'] = [curCprime[3], curCprime[2], curC[2], curC[3]]
+      new_state.d['aprime'] = [curA[0], curA[1], curAprime[2], curAprime[3]]
+      new_state.d['bprime'] = curBprime
+      new_state.d['cprime'] = [curCprime[0], curCprime[1], curC[1], curC[0]]
     elif face=='bprime':
       
-    if face=='c':
+    elif face=='c':
      
     elif face=='cprime':
       
@@ -102,24 +117,13 @@ class State:
     
     news.d[From]=pf[:-1] # remove it from its old peg.
     news.d[To]=pt[:]+[df] # Put disk onto destination peg.
-    return news # return new state
+    return new_state # return new state
 #unsure
   def flip(face):
     newface = []
     for i in range(4):
       newface.append(face[3-i])
     return newface
-  def sideflip(north, south, east, west):
-    # each nsew is an array of the tile from left to right
-    # when looking at it straight on
-    newsides = []
-    newsides.append(south)
-    newsides.append(north)
-    newsides.append(west)
-    newsides.append(east)
-    return newsides
-    
-    
 
 def make_goal_state():
   global GOAL_STATE
@@ -156,15 +160,16 @@ class Operator:
 #  INITIAL_DICT = {'peg1': list(range(N_disks,0,-1)), 'peg2':[], 'peg3':[] }
 #  CREATE_INITIAL_STATE = lambda: State(INITIAL_DICT)
 #DUMMY_STATE =  {'peg1':[], 'peg2':[], 'peg3':[] }
+def CREATE_CLEAN_STATE():
+  return State({'a':[0,0,0,0], 'b':[1,1,1,1], 'c':[2,2,2,2], 'aprime':[3,3,3,3], 'bprime':[4,4,4,4], 'cprime':[5,5,5,5]})
 def CREATE_INITIAL_STATE():
-  return State({'peg1': list(range(N_disks,0,-1)), 'peg2':[], 'peg3':[] })
+  #TODO
+
+
+  
 #</INITIAL_STATE>
 
 #<OPERATORS>
-peg_combinations = [('peg'+str(a),'peg'+str(b)) for (a,b) in
-#                    [(1,2),(1,3),(2,1),(2,3),(3,1),(3,2)]]
-                    [(1,3),(1,2),(3,2),(3,1),(2,1),(2,3)]] # reordered for
-                     # easier policy display in the Reinforcement Learning app.
 OPERATORS = [Operator("Move disk from "+p+" to "+q,
                       lambda s,p1=p,q1=q: s.can_move(p1,q1),
                       # The default value construct is needed
