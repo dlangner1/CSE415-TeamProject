@@ -55,6 +55,9 @@ class State:
   def __str__(self):
     # Produces a textual description of a state.
     # Might not be needed in normal operation with GUIs.
+    # [0 1]
+    # [2 3]
+    # in array form, [0, 1, 2, 3]
     txt = "["
     for side in ['a','aprime','b', 'bprime', 'c', 'cprime']:
       txt += str(self.d[side]) + " ,"
@@ -86,17 +89,40 @@ class State:
     except (Exception) as e:
       print(e)
 
-  def move(self,From,To):
+  def move(self,side,row):
     '''Assuming it's legal to make the move, this computes
        the new state resulting from moving the topmost disk
        from the From peg to the To peg.'''
+    
+      
     news = self.copy() # start with a deep copy.
-    pf=self.d[From] # peg disk goes from.
-    pt=self.d[To]
+    curA=self.d['a']
+    curAprime=self.d['aprime']
+    curB=self.d['b']
+    curBprime=self.d['bprime']
+    curC=self.d['c']
+    curCprime=self.d['cprime'] 
+    #TODO
     df=pf[-1]  # the disk to move.
     news.d[From]=pf[:-1] # remove it from its old peg.
     news.d[To]=pt[:]+[df] # Put disk onto destination peg.
     return news # return new state
+  def flip(face):
+    newface = []
+    for i in range(4):
+      newface.append(face[3-i])
+    return newface
+  def sideflip(north, south, east, west):
+    # each nsew is an array of the tile from left to right
+    # when looking at it straight on
+    newsides = []
+    newsides.append(south)
+    newsides.append(north)
+    newsides.append(west)
+    newsides.append(east)
+    return newsides
+    
+    
 
 def make_goal_state():
   global GOAL_STATE
