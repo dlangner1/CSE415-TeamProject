@@ -185,22 +185,19 @@ def CREATE_CLEAN_STATE():
 
 
 def CREATE_INITIAL_STATE():
-
+    return "a"
 
 # </INITIAL_STATE>
 
 # <OPERATORS>
-peg_combinations = [('peg' + str(a), 'peg' + str(b)) for (a, b) in
-                    #                    [(1,2),(1,3),(2,1),(2,3),(3,1),(3,2)]]
-                    [(1, 3), (1, 2), (3, 2), (3, 1), (2, 1), (2, 3)]]  # reordered for
-# easier policy display in the Reinforcement Learning app.
-OPERATORS = [Operator("Move disk from " + p + " to " + q,
+
+"""OPERATORS = [Operator("Move disk from " + p + " to " + q,
                       lambda s, p1=p, q1=q: s.can_move(p1, q1),
                       # The default value construct is needed
                       # here to capture the values of p&q separately
                       # in each iteration of the list comp. iteration.
                       lambda s, p1=p, q1=q: s.move(p1, q1))
-             for (p, q) in peg_combinations]
+             for (p, q) in peg_combinations]"""
 # </OPERATORS>
 
 # <GOAL_TEST> (optional)
