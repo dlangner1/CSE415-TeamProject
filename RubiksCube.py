@@ -26,8 +26,8 @@ with other tools.
 #</METADATA>
 
 #<COMMON_DATA>
-N_disks = 3  # Use default, but override if new value supplied
-             # by the user on the command line.
+
+#following part is unnecesssary for rubik's cube
 try:
   import sys
   arg2 = sys.argv[2]
@@ -46,16 +46,18 @@ class State:
     self.d = d
 
   def __eq__(self,s2):
-    for p in ['peg1','peg2','peg3']:
-      if self.d[p] != s2.d[p]: return False
+    #i'm calling the front face a, the top face b, the right face c, and the
+    #opposites of those their primes
+    for side in ['a','aprime','b', 'bprime', 'c', 'cprime']:
+      if self.d[side] != s2.d[side]: return False
     return True
 
   def __str__(self):
     # Produces a textual description of a state.
     # Might not be needed in normal operation with GUIs.
     txt = "["
-    for peg in ['peg1','peg2','peg3']:
-      txt += str(self.d[peg]) + " ,"
+    for side in ['a','aprime','b', 'bprime', 'c', 'cprime']:
+      txt += str(self.d[side]) + " ,"
     return txt[:-2]+"]"
 
   def __hash__(self):
@@ -65,10 +67,10 @@ class State:
     # Performs an appropriately deep copy of a state,
     # for use by operators in creating new states.
     news = State({})
-    for peg in ['peg1', 'peg2', 'peg3']:
-      news.d[peg]=self.d[peg][:]
+    for side in ['a','aprime','b', 'bprime', 'c', 'cprime']:
+      news.d[side]=self.d[side][:]
     return news
-
+#unnecessary for rubik's cube because there are no restrictions on moves?
   def can_move(self,From,To):
     '''Tests whether it's legal to move a disk in state s
        from the From peg to the To peg.'''
