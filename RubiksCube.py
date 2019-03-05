@@ -159,13 +159,9 @@ def goal_message(s):
 
 
 class Operator:
-    def __init__(self, name, precond, state_transf):
+    def __init__(self, name, state_transf):
         self.name = name
-        self.precond = precond
         self.state_transf = state_transf
-
-    def is_applicable(self, s):
-        return self.precond(s)
 
     def apply(self, s):
         return self.state_transf(s)
@@ -191,13 +187,7 @@ def CREATE_INITIAL_STATE():
 
 # <OPERATORS>
 
-"""OPERATORS = [Operator("Move disk from " + p + " to " + q,
-                      lambda s, p1=p, q1=q: s.can_move(p1, q1),
-                      # The default value construct is needed
-                      # here to capture the values of p&q separately
-                      # in each iteration of the list comp. iteration.
-                      lambda s, p1=p, q1=q: s.move(p1, q1))
-             for (p, q) in peg_combinations]"""
+OPERATORS = [Operator("Move side " + p, lambda s, p1=p: s.move(p1)) for p in sides]
 # </OPERATORS>
 
 # <GOAL_TEST> (optional)
