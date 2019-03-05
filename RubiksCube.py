@@ -99,8 +99,8 @@ class State:
     return news # return new state
 
 def make_goal_state():
-  global GOAL_STATE, N_disks
-  GOAL_STATE = State({'peg1':[],'peg2':[],'peg3':list(range(N_disks,0,-1))})
+  global GOAL_STATE
+  GOAL_STATE = State({'a':[0, 0, 0, 0],'b':[1, 1, 1, 1],'c':[2, 2, 2, 2], 'aprime':[3, 3, 3, 3], 'bprime':[4, 4, 4, 4], 'cprime':[5, 5, 5, 5]})
   #print("GOAL_STATE="+str(GOAL_STATE))
 
 make_goal_state()
@@ -113,7 +113,7 @@ def goal_test(s):
   return s==GOAL_STATE
 
 def goal_message(s):
-  return "The Tower Transport is Triumphant!"
+  return "Cube is Solved!"
 
 class Operator:
   def __init__(self, name, precond, state_transf):
