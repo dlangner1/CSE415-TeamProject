@@ -16,6 +16,8 @@ PROBLEM_DESC = \
 
 # </METADATA>
 
+import random
+
 # <COMMON_DATA>
 
 sides = ['a', 'aprime', 'b', 'bprime', 'c', 'cprime']
@@ -125,6 +127,11 @@ class State:
         for i in range(4):
             newface.append(face[3 - i])
         return newface
+
+    def randomize(self, num_moves):
+        for _ in range(num_moves):
+            face_to_move = random.choice(sides)
+            self.move(face_to_move)
 
 
 def make_goal_state():
