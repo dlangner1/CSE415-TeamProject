@@ -95,8 +95,10 @@ class State:
         elif face == 'bprime':
             new_state.d['bprime'] = new_state.flip(curBprime)
 
-
-
+            new_state.d['a'] = [curA[0], curA[1], curAprime[2], curAprime[3]]
+            new_state.d['aprime'] = [curAprime[0], curAprime[1], curA[2], curA[3]]
+            new_state.d['c'] = [curC[0], curC[1], curCprime[1], curCprime[0]]
+            new_state.d['cprime'] = [curC[3], curC[2], curCprime[2], curCprime[3]]
 
         elif face == 'c':
             new_state.d['c'] = new_state.flip(curC)
