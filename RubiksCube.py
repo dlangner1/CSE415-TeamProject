@@ -20,6 +20,9 @@ import random
 
 # <COMMON_DATA>
 
+NUM_RANDOM_GENERATION_MOVES = 20
+
+
 sides = ['a', 'aprime', 'b', 'bprime', 'c', 'cprime']
 
 
@@ -185,7 +188,7 @@ def CREATE_CLEAN_STATE():
 
 
 def CREATE_INITIAL_STATE():
-    return "a"
+    return CREATE_CLEAN_STATE().randomize(NUM_RANDOM_GENERATION_MOVES)
 
 # </INITIAL_STATE>
 
