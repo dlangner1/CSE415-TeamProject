@@ -73,27 +73,9 @@ class State:
     for side in ['a','aprime','b', 'bprime', 'c', 'cprime']:
       news.d[side]=self.d[side][:]
     return news
-#unnecessary for rubik's cube because there are no restrictions on moves?
-  def can_move(self,From,To):
-    '''Tests whether it's legal to move a disk in state s
-       from the From peg to the To peg.'''
-    try:
-      pf=self.d[From] # peg disk goes from
-      pt=self.d[To]   # peg disk goes to
-      if pf==[]: return False  # no disk to move.
-      df=pf[-1]  # get topmost disk at From peg..
-      if pt==[]: return True # no disk to worry about at To peg.
-      dt=pt[-1]  # get topmost disk at To peg.
-      if df<dt: return True # Disk is smaller than one it goes on.
-      return False # Disk too big for one it goes on.
-    except (Exception) as e:
-      print(e)
 
-  def move(self,side,row):
-    '''Assuming it's legal to make the move, this computes
-       the new state resulting from moving the topmost disk
-       from the From peg to the To peg.'''
-    
+  def move(self,face):
+   
       
     news = self.copy() # start with a deep copy.
     curA=self.d['a']
@@ -103,10 +85,25 @@ class State:
     curC=self.d['c']
     curCprime=self.d['cprime'] 
     #TODO
-    df=pf[-1]  # the disk to move.
+    if face=='a':
+      
+    elif face=='aprime':
+      
+    if face=='b':
+      
+    elif face=='bprime':
+      
+    if face=='c':
+     
+    elif face=='cprime':
+      
+    
+      
+    
     news.d[From]=pf[:-1] # remove it from its old peg.
     news.d[To]=pt[:]+[df] # Put disk onto destination peg.
     return news # return new state
+#unsure
   def flip(face):
     newface = []
     for i in range(4):
