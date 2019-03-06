@@ -1,4 +1,9 @@
 '''RubiksCube.py
+
+Dustin Langner and Brian Yu
+CSE 415, Winter 2019, Project
+March 11th, 2019
+
 '''
 # <METADATA>
 QUIET_VERSION = "0.2"
@@ -6,13 +11,18 @@ PROBLEM_NAME = "Rubik's Cube"
 PROBLEM_VERSION = "0.1"
 PROBLEM_AUTHORS = ['Brian Yu', 'Dustin Langner']
 PROBLEM_CREATION_DATE = "03-MAR-2019"
-# TODO: replace this problem description
 PROBLEM_DESC = \
-    '''
-    '''
+'''
+This formulation of the Rubik's Cube game uses generic
+Python 3 constructs and has been tested with Python 3.6.
+It is designed to work according to the QUIET2 tools interface.
 
-# TODO: everything below is a copy of Towers of Hanoi.
-#  We need to create a feature based representation of Rubik's Cube
+The goal of this game is to convert a given Rubik's Cube that has been randomly
+shuffled a given number of times into a goal state. A Rubik's Cube is considered 
+to be in a goal state if each side of the cube has a unique, single color to 
+its tiles. For example, one side should consist of only white colored tiles, another
+of only green tiles, and so on.  
+'''
 
 # </METADATA>
 
@@ -126,10 +136,10 @@ class State:
 
     # flips the current facing face
     def flip(self, face):
-        newface = []
+        new_face = []
         for i in range(4):
-            newface.append(face[3 - i])
-        return newface
+            new_face.append(face[3 - i])
+        return new_face
 
     def randomize(self, num_moves):
         for _ in range(num_moves):
