@@ -128,8 +128,7 @@ def is_valid_goal_state(s):
     return False
 
 
-Terminal_state = State({'peg1': [], 'peg2': [], 'peg3': []})  # The "Terminal" state
-# consists of 3 pegs with NO disks.
+Terminal_state = State({'a': [], 'b': [], 'c': [], 'aprime': [], 'bprime': [], 'cprime': []})
 
 ALL_STATES = None
 # Q_VALUES = {}
