@@ -1,0 +1,9 @@
+(a) what are the main techniques you are featuring in your project? (b) How far along is your implementation (what works, what does not yet work?).
+In our project, we will be using feature-based reinforcement learning. Because the state space for the rubik's cube is so large, we will need to
+identify features with which we can assign certain states. We think that for our features, we will use certain patterns on the faces. We should be
+able to group combinations of patterns together as features, because apart from the colors, states that are rotationally identical can be solved in
+the same way. To reduce the size of the state space, we are only considering 180 degree rotations, and are using a 2x2x2 cube. The benefit of this is
+that the combination of these two should produce a large number of rotationally symmetric states. With the 180 degree rotation restriction, any given
+color can only appear on two of the six possible faces. With the 2x2x2 restriction, we can reduce the number of combinations of faces which form the
+list of features. We are using these features in our Markov Decision Process to determine the optimal policy at any given state, or any given feature.
+So far, we have finished the problem formulation, as well as made changes to the Markov Decision Process file from assignment 5 to fit our project. 
