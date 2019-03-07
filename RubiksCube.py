@@ -162,12 +162,12 @@ make_goal_state()
 
 
 def goal_test(s):
-    # return len(s.d['peg3'])==N_disks
+
     global GOAL_STATE, sides
     match = 0
-    for sidecur in sides:
-        for sidegoal in sides:
-            if s.d[sidegoal]==s.d[sidecur]:
+    for side_cur in sides:
+        for side_goal in sides:
+            if s.d[side_goal] == GOAL_STATE.d[side_cur]:
                 match += 1
     return match == 6
 
