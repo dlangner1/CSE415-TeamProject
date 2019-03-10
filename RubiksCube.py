@@ -142,9 +142,14 @@ class State:
         return new_face
 
     def randomize(self, num_moves):
+
+        new_state = self
+
         for _ in range(num_moves):
             face_to_move = random.choice(sides)
-            self.move(face_to_move)
+            new_state = new_state.move(face_to_move)
+
+        return new_state
 
 
 def make_goal_state():
