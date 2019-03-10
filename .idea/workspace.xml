@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ce2d44-1689-45de-915a-028691ef90b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/RubiksCube_Q_Learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/RubiksCube_Q_Learn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RubiksCubeGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RubiksCubeGUI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state relative-caret-position="-2602">
+              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube_MDP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+            <state>
+              <caret selection-end-line="10" selection-end-column="3" />
               <folding>
                 <element signature="e#253#277#0" expanded="true" />
               </folding>
@@ -33,29 +33,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="158" column="63" lean-forward="true" selection-start-line="158" selection-start-column="63" selection-end-line="158" selection-end-column="63" />
+            <state>
+              <caret selection-end-line="4" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RubiksCube_agent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="120">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -98,6 +89,7 @@
         <option value="$PROJECT_DIR$/RubiksCube.py" />
         <option value="$PROJECT_DIR$/RubiksCube_agent.py" />
         <option value="$PROJECT_DIR$/RubiksCube_Q_Learn.py" />
+        <option value="$PROJECT_DIR$/RubiksCubeGUI.py" />
       </list>
     </option>
   </component>
@@ -155,7 +147,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-282" y="-1057" width="1200" height="763" extended-state="0" />
+    <frame x="0" y="23" width="701" height="713" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25699747" />
@@ -206,15 +198,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RubiksCube.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
+        <state relative-caret-position="-2602">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RubiksCube_MDP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+        <state>
+          <caret selection-end-line="10" selection-end-column="3" />
           <folding>
             <element signature="e#253#277#0" expanded="true" />
           </folding>
@@ -228,17 +220,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
+    <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state>
+          <caret selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
+    <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="158" column="63" lean-forward="true" selection-start-line="158" selection-start-column="63" selection-end-line="158" selection-end-column="63" />
+        <state relative-caret-position="120">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
