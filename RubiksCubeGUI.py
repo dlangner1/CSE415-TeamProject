@@ -1,13 +1,17 @@
 import tkinter
+import RubiksCube as cube
 window = tkinter.Tk()
 window.title("GUI")
 
-a = [0,0,0,0]
-b = [1,1,1,1]
-c = [2,2,2,2]
-aprime = [3,3,3,3]
-bprime = [4,4,4,4]
-cprime = [5,5,5,5]
+
+cur = cube.CREATE_CLEAN_STATE()
+a = cur.d['a'];
+b = cur.d['b'];
+c = cur.d['c'];
+aprime = cur.d['aprime'];
+bprime = cur.d['bprime'];
+cprime = cur.d['cprime'];
+
 def displayCube():
     colors = {0:"blue", 1:"red", 2:"yellow", 3:"green", 4:"orange", 5:"purple"}
     acounter = 0;
@@ -41,32 +45,51 @@ def displayCube():
         for j in range(2, 4):
             tkinter.Label(window, text = cprime[cprimecounter], fg = "white", bg = colors[cprime[cprimecounter]]).grid(row = i, column = j)
             cprimecounter += 1
+def updateStates():
+    global a, b, c, aprime, bprime, cprime, cur
+    a = cur.d['a'];
+    b = cur.d['b'];
+    c = cur.d['c'];
+    aprime = cur.d['aprime'];
+    bprime = cur.d['bprime'];
+    cprime = cur.d['cprime'];
 def flipA():
-    global a
-    a = [1, 1, 1, 1]
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cur.move('a')
+    updateStates()
+    displayCube()
 def flipB():
-    global b
-    b = [2,2,2,2]
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cur.move('b')
+    updateStates()
+    displayCube()
 def flipC():
-    global c
-    c = [3,3,3,3]
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cur.move('c')
+    updateStates()
+    displayCube()
 def flipAPrime():
-    global aprime
-    aprime = [4,4,4,4]
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cur.move('aprime')
+    updateStates()
+    displayCube()
 def flipBPrime():
-    global bprime
-    bprime = [5,5,5,5]
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cur.move('bprime')
+    updateStates()
+    displayCube()
 def flipCPrime():
-    global cprime
-    cprime = [0,0,0,0]
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cur.move('cprime')
+    updateStates()
+    displayCube()
 
-
-tkinter.Button(window, text = "Update", command = displayCube).grid(row = 10, column = 10)
 tkinter.Button(window, text = "Flip A", command = flipA).grid(row = 12, column = 10)
 tkinter.Button(window, text = "Flip B", command = flipB).grid(row = 14, column = 10)
 tkinter.Button(window, text = "Flip C", command = flipC).grid(row = 16, column = 10)
 tkinter.Button(window, text = "Flip APrime", command = flipAPrime).grid(row = 18, column = 10)
 tkinter.Button(window, text = "Flip BPrime", command = flipBPrime).grid(row = 20, column = 10)
 tkinter.Button(window, text = "Flip CPrime", command = flipCPrime).grid(row = 22, column = 10)
+displayCube()
 window.mainloop()
 
