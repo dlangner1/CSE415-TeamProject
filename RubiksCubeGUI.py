@@ -13,7 +13,7 @@ bprime = cur.d['bprime'];
 cprime = cur.d['cprime'];
 
 def displayCube():
-    colors = {0:"blue", 1:"red", 2:"yellow", 3:"green", 4:"orange", 5:"purple"}
+    colors = {0:"blue", 1:"red", 2:"gray", 3:"green", 4:"orange", 5:"purple"}
     acounter = 0;
     bcounter = 0;
     ccounter = 0;
@@ -23,27 +23,27 @@ def displayCube():
     global a, b, c, aprime, bprime, cprime
     for i in range(2):
         for j in range(2, 4):
-            tkinter.Label(window, text = b[bcounter], fg = "white", bg = colors[b[bcounter]]).grid(row = i, column = j)
+            tkinter.Label(window, text = b[bcounter], fg = "white", bg = colors[b[bcounter]], font = "Verdana 40 bold").grid(row = i, column = j)
             bcounter += 1
     for i in range(2, 4):
         for j in range(2):
-            tkinter.Label(window, text = a[acounter], fg = "white", bg = colors[a[acounter]]).grid(row = i, column = j)
+            tkinter.Label(window, text = a[acounter], fg = "white", bg = colors[a[acounter]], font = "Verdana 40 bold").grid(row = i, column = j)
             acounter += 1
     for i in range(2, 4):
         for j in range(2, 4):
-            tkinter.Label(window, text = c[ccounter], fg = "white", bg = colors[c[ccounter]]).grid(row = i, column = j)
+            tkinter.Label(window, text = c[ccounter], fg = "white", bg = colors[c[ccounter]], font = "Verdana 40 bold").grid(row = i, column = j)
             ccounter += 1
     for i in range(2, 4):
         for j in range(4, 6):
-            tkinter.Label(window, text = aprime[aprimecounter], fg = "white", bg = colors[aprime[aprimecounter]]).grid(row = i, column = j)
+            tkinter.Label(window, text = aprime[aprimecounter], fg = "white", bg = colors[aprime[aprimecounter]], font = "Verdana 40 bold").grid(row = i, column = j)
             aprimecounter += 1
     for i in range(4, 6):
         for j in range(2, 4):
-            tkinter.Label(window, text = bprime[bprimecounter], fg = "white", bg = colors[bprime[bprimecounter]]).grid(row = i, column = j)
+            tkinter.Label(window, text = bprime[bprimecounter], fg = "white", bg = colors[bprime[bprimecounter]], font = "Verdana 40 bold").grid(row = i, column = j)
             bprimecounter += 1
     for i in range(6, 8):
         for j in range(2, 4):
-            tkinter.Label(window, text = cprime[cprimecounter], fg = "white", bg = colors[cprime[cprimecounter]]).grid(row = i, column = j)
+            tkinter.Label(window, text = cprime[cprimecounter], fg = "white", bg = colors[cprime[cprimecounter]], font = "Verdana 40 bold").grid(row = i, column = j)
             cprimecounter += 1
 def updateStates():
     global a, b, c, aprime, bprime, cprime, cur
