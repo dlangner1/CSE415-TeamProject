@@ -175,6 +175,19 @@ def extract_policy(S, A):
 
     return Policy
 
+# EXPLORE
+
+
+def explore(state):
+
+
+
+
+
+
+
+
+
 
 # FEATURES
 

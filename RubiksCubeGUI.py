@@ -8,6 +8,7 @@ March 11th, 2019
 
 import tkinter
 import RubiksCube as cube
+import RubiksCube_Q_Learn as agent
 
 window = tkinter.Tk()
 window.title("GUI")
