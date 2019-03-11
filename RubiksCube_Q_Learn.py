@@ -198,8 +198,28 @@ def face_c_solved(state, action):
         return 0
 
 
+def layer_c_solved(state, action):
+    new_state = state.move(action)
 
-
-
-
-
+    face_a = new_state.d['a']
+    face_b = new_state.d['b']
+    face_c = new_state.d['c']
+    face_aprime = new_state.d['aprime']
+    face_bprime = new_state.d['bprime']
+    face_equals = face_c[0] == face_c[1] == face_c[2] == face_c[3]
+    a_equals = face_a[1] == face_a[3]
+    aprime_equals = face_aprime[0] == face_aprime[2]
+    b_equals = face_b[2] == face_b[3]
+    bprime_equals = face_bprime[0] == face_bprime[1]
+    if face_equals and a_equals and aprime_equals and b_equals and bprime_equals:
+        return 1
+    else:
+        return 0
+def face_c_almost_solved(state, action):
+    face_c = new_state.d['c']
+    comb1 = face_c[0] == face_c[1] != face_c[2] == face_c[3]
+    comb2 = face_c[0] == face_c[2] != face_c[1] == face_c[3]
+    if comb1 and comb2:
+        return 1
+    else:
+        return 0
