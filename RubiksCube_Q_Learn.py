@@ -21,6 +21,25 @@ Terminal_state = None
 USE_EXPLORATION_FUNCTION = None
 INITIAL_STATE = None
 
+ALL_STATES = None;
+def generate_all_states():
+    global ALL_STATES
+    moves = ['a', 'b', 'c', 'aprime', 'bprime', 'cprime']
+    initial_state = CREATE_CLEAN_STATE()
+    OPEN = [initial_state]
+    while OPEN != []:
+        S = OPEN.pop(0)
+        ALL_STATES.append(S)
+        L = []
+        for i in range(6):
+            new_state = S.move(moves[i])
+            L.append(new_state)
+        for s2 in ALL_STATES:
+            for i in range(len(L)):
+                if s2 == L[i]:
+                    del L[i]
+                    break
+        OPEN = OPEN + L
 
 def setup(states, actions, q_vals_dict, update_q_value_callback, \
           goal_test, terminal, use_exp_fn=False):
