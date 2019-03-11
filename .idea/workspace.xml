@@ -17,17 +17,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+            <state relative-caret-position="162">
+              <caret line="196" column="10" selection-start-line="196" selection-start-column="4" selection-end-line="196" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="325">
+              <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
               <folding>
                 <element signature="e#107#121#0" expanded="true" />
               </folding>
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="162">
+              <caret line="39" column="16" selection-start-line="39" selection-end-line="39" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -77,7 +77,14 @@
       <find>extra</find>
       <find>layer_c_solved</find>
       <find>times</find>
+      <find>goal_</find>
       <find>q_le</find>
+      <find>generate_weights</find>
+      <find>q_</find>
+      <find>random</find>
+      <find>shuffle_cu</find>
+      <find>CREATE</find>
+      <find>cur =</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -90,16 +97,16 @@
         <option value="$PROJECT_DIR$/RubiksCube_agent.py" />
         <option value="$PROJECT_DIR$/RubiksCube_MDP.py" />
         <option value="$PROJECT_DIR$/RubiksCube.py" />
-        <option value="$PROJECT_DIR$/RubiksCubeGUI.py" />
         <option value="$PROJECT_DIR$/RubiksCube_Q_Learn.py" />
+        <option value="$PROJECT_DIR$/RubiksCubeGUI.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-269" />
-    <option name="y" value="-1057" />
-    <option name="width" value="731" />
-    <option name="height" value="713" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="53" />
+    <option name="y" value="23" />
+    <option name="width" value="1076" />
+    <option name="height" value="711" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -172,16 +179,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-269" y="-1057" width="731" height="713" extended-state="0" />
+    <frame x="6" y="23" width="1274" height="711" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25688073" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25687203" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.093397744" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.17391305" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1825525" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.15347335" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -213,17 +220,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RubiksCubeGUI.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Milestone_A_who_and_what.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -249,13 +245,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubiksCube.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -263,20 +252,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
+    <entry file="file://$PROJECT_DIR$/new 1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RubiksCube.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
-          <folding>
-            <element signature="e#107#121#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="196" column="10" selection-start-line="196" selection-start-column="4" selection-end-line="196" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="162">
+          <caret line="39" column="16" selection-start-line="39" selection-end-line="39" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+          <folding>
+            <element signature="e#107#121#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

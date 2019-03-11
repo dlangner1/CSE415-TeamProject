@@ -7,6 +7,8 @@ March 11th, 2019
 '''
 
 import tkinter
+import random
+import time
 import RubiksCube as cube
 import RubiksCube_Q_Learn as agent
 
@@ -14,6 +16,7 @@ window = tkinter.Tk()
 window.title("GUI")
 
 cur = cube.CREATE_CLEAN_STATE()
+agent.generate_weights()
 
 a = cur.d['a']
 b = cur.d['b']
@@ -67,6 +70,9 @@ def displayCube():
 
 def flipA():
     global a, b, c, aprime, bprime, cprime, cur
+
+    agent.q_learn(cur, 'a')
+
     cur = cur.move('a')
     updateStates()
     displayCube()
@@ -74,6 +80,9 @@ def flipA():
 
 def flipB():
     global a, b, c, aprime, bprime, cprime, cur
+
+    agent.q_learn(cur, 'b')
+
     cur = cur.move('b')
     updateStates()
     displayCube()
@@ -81,6 +90,9 @@ def flipB():
 
 def flipC():
     global a, b, c, aprime, bprime, cprime, cur
+
+    agent.q_learn(cur, 'c')
+
     cur = cur.move('c')
     updateStates()
     displayCube()
@@ -88,6 +100,9 @@ def flipC():
 
 def flipAPrime():
     global a, b, c, aprime, bprime, cprime, cur
+
+    agent.q_learn(cur, 'aprime')
+
     cur = cur.move('aprime')
     updateStates()
     displayCube()
@@ -124,12 +139,39 @@ def shuffle_cube():
     displayCube()
 
 
-def q_learn():
-    agent.q_learn(1)
+def run_agent_5_times():
+    run_agent(5)
+
+
+def run_agent_10_times():
+    run_agent(10)
+
+
+def run_agent_20_times():
+    run_agent(20)
+
+
+def run_agent(num_times):
+    actions = cube.sides
+
+    for _ in range(num_times):
+        random_move = random.choice(actions)
+
+        if random_move == 'a':
+            flipA()
+        elif random_move == 'b':
+            flipB()
+        elif random_move == 'c':
+            flipC()
+        elif random_move == 'aprime':
+            flipAPrime()
+        elif random_move == 'bprime':
+            flipBPrime()
+        else:
+            flipCPrime()
 
 
 best_move_text = ''
-
 def extract_policy():
     global cur, best_move_text
     best_action = agent.extract_policy(cur)
@@ -154,10 +196,13 @@ tkinter.Button(window, text="Flip APrime", command=flipAPrime).grid(row=18, colu
 tkinter.Button(window, text="Flip BPrime", command=flipBPrime).grid(row=20, column=10)
 tkinter.Button(window, text="Flip CPrime", command=flipCPrime).grid(row=22, column=10)
 
-tkinter.Button(window, text="Shuffle Cube", command=shuffle_cube).grid(row=12, column=14)
-tkinter.Button(window, text="Q-Learn", command=q_learn).grid(row=14, column=14)
-tkinter.Button(window, text="Show Best Move", command=extract_policy).grid(row=16, column=14)
-tkinter.Button(window, text="Reset", command=reset_state).grid(row=18, column=14)
+tkinter.Button(window, text="Run Q-Learn Agent 5 times", command=run_agent_5_times).grid(row=12, column=14)
+tkinter.Button(window, text="Run Q-Learn Agent 10 times", command=run_agent_10_times).grid(row=14, column=14)
+tkinter.Button(window, text="Run Q-Learn Agent 20 times", command=run_agent_20_times).grid(row=16, column=14)
+tkinter.Button(window, text="Show Best Move", command=extract_policy).grid(row=18, column=14)
+
+tkinter.Button(window, text="Shuffle Cube", command=shuffle_cube).grid(row=20, column=14)
+tkinter.Button(window, text="Reset", command=reset_state).grid(row=22, column=14)
 
 
 displayCube()
