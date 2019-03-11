@@ -67,12 +67,26 @@ def displayCube():
 
 def updateStates():
     global a, b, c, aprime, bprime, cprime, cur
-    a = cur.d['a'];
-    b = cur.d['b'];
-    c = cur.d['c'];
-    aprime = cur.d['aprime'];
-    bprime = cur.d['bprime'];
-    cprime = cur.d['cprime'];
+    a = cur.d['a']
+    b = cur.d['b']
+    c = cur.d['c']
+    aprime = cur.d['aprime']
+    bprime = cur.d['bprime']
+    cprime = cur.d['cprime']
+
+
+def shuffle_cube():
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cube.CREATE_INITIAL_STATE()
+    updateStates()
+    displayCube()
+
+
+def reset_state():
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cube.CREATE_CLEAN_STATE()
+    updateStates()
+    displayCube()
 
 
 def flipA():
@@ -113,20 +127,6 @@ def flipBPrime():
 def flipCPrime():
     global a, b, c, aprime, bprime, cprime, cur
     cur = cur.move('cprime')
-    updateStates()
-    displayCube()
-
-
-def shuffle_cube():
-    global a, b, c, aprime, bprime, cprime, cur
-    cur = cube.CREATE_INITIAL_STATE()
-    updateStates()
-    displayCube()
-
-
-def reset_state():
-    global a, b, c, aprime, bprime, cprime, cur
-    cur = cube.CREATE_CLEAN_STATE()
     updateStates()
     displayCube()
 

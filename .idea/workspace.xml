@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ce2d44-1689-45de-915a-028691ef90b4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RubiksCubeGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/RubiksCubeGUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RubiksCube_Q_Learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/RubiksCube_Q_Learn.py" afterDir="false" />
     </list>
@@ -16,29 +17,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="165" column="17" lean-forward="true" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+            <state relative-caret-position="-2047">
+              <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RubiksCube_MDP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="134" column="14" lean-forward="true" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
-              <folding>
-                <element signature="e#253#277#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2461">
-              <caret line="182" selection-start-line="182" selection-end-line="182" />
+            <state relative-caret-position="203">
+              <caret line="117" column="62" lean-forward="true" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -46,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-846">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="1335">
+              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
               <folding>
                 <element signature="e#107#121#0" expanded="true" />
               </folding>
@@ -82,6 +71,7 @@
       <find>Terminal_state</find>
       <find>Q_VALUES</find>
       <find>UQV_callback</find>
+      <find>update_Q_value</find>
       <find>tkinter</find>
     </findStrings>
   </component>
@@ -93,8 +83,8 @@
       <list>
         <option value="$PROJECT_DIR$/Milestone_A_who_and_what.py" />
         <option value="$PROJECT_DIR$/RubiksCube_agent.py" />
-        <option value="$PROJECT_DIR$/RubiksCube.py" />
         <option value="$PROJECT_DIR$/RubiksCube_MDP.py" />
+        <option value="$PROJECT_DIR$/RubiksCube.py" />
         <option value="$PROJECT_DIR$/RubiksCubeGUI.py" />
         <option value="$PROJECT_DIR$/RubiksCube_Q_Learn.py" />
       </list>
@@ -232,17 +222,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RubiksCube_MDP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12337">
+          <caret line="134" column="14" lean-forward="true" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
+          <folding>
+            <element signature="e#253#277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RubiksCube.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="165" column="17" lean-forward="true" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+        <state relative-caret-position="-2047">
+          <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RubiksCubeGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-846">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="1335">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="e#107#121#0" expanded="true" />
           </folding>
@@ -251,18 +251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RubiksCube_Q_Learn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2461">
-          <caret line="182" selection-start-line="182" selection-end-line="182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RubiksCube_MDP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="134" column="14" lean-forward="true" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
-          <folding>
-            <element signature="e#253#277#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="203">
+          <caret line="117" column="62" lean-forward="true" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
         </state>
       </provider>
     </entry>

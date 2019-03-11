@@ -96,6 +96,7 @@ def handle_transition(action, new_state, r):
 
     # *** ADD OR CHANGE CODE HERE ***
 
+
     # You should call update_Q_value before returning.  E.g.,
     update_Q_value(PREVIOUS_STATE, action, -99)
 
@@ -175,15 +176,13 @@ def extract_policy(S, A):
 
     return Policy
 
-# EXPLORE
 
+def create_initial_q_vals_dict(states, actions):
+    global Q_VALUES
 
-def explore(state):
-
-
-
-
-
+    for state in states:
+        for action in actions:
+            Q_VALUES[(state, action)] = 0.0
 
 
 
