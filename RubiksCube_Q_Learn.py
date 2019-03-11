@@ -192,9 +192,10 @@ def face_c_solved(state, action):
     new_state = state.move(action)
 
     face_c = new_state.d['c']
-
-    return face_c[0] == face_c[1] and face_c[1] == face_c[2] \
-           and face_c[2] == face_c[3]
+    if face_c[0] == face_c[1] == face_c[2] == face_c[3]:
+        return 1
+    else:
+        return 0
 
 
 
