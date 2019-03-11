@@ -118,9 +118,7 @@ def flipCPrime():
 
 def shuffle_cube():
     global a, b, c, aprime, bprime, cprime, cur
-    print(cur)
     cur = cube.CREATE_INITIAL_STATE()
-    print(cur)
     updateStates()
     displayCube()
 

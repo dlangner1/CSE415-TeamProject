@@ -162,7 +162,14 @@ def extract_policy(S, A):
     Reminder: goal states should map to the Exit action, and no other states
     should map to the Exit action.
     '''
-    global Policy
-    Policy = {}
-    # *** ADD OR CHANGE CODE HERE ***
+    global Policy, Q_VALUES
+
+    for state in S:
+        max_q_value = 0.0
+        for action in A:
+            q_value = Q_VALUES[(state, action)]
+            if max(max_q_value, q_value) == q_value:
+                Policy[state] = action
+                max_q_value = q_value
+
     return Policy

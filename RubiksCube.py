@@ -127,7 +127,7 @@ class State:
 
             new_state.d['cprime'] = new_state.flip(curCprime)
 
-            new_state.d['a'] = [curAprime[3], curA[1], curAprime[1], curAprime[3]]
+            new_state.d['a'] = [curAprime[3], curA[1], curAprime[1], curA[3]]
             new_state.d['aprime'] = [curAprime[0], curA[2], curAprime[2], curA[0]]
             new_state.d['b'] = [curBprime[3], curBprime[2], curB[2], curB[3]]
             new_state.d['bprime'] = [curBprime[0], curBprime[1], curB[1], curB[0]]
@@ -143,7 +143,7 @@ class State:
 
     def randomize(self, num_moves):
 
-        new_state = self
+        new_state = self.copy()
 
         for _ in range(num_moves):
             face_to_move = random.choice(sides)

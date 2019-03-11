@@ -11,9 +11,7 @@ but which adds the following:
 '''
 
 from RubiksCube import *
-
-import RubiksCube_agent as VI
-# import RubiksCube_Q_Learn as Q_Learn
+import RubiksCube_Q_Learn as Q_Learn
 
 # TODO: Fix appropriate methods to fit for Rubik's Cube
 
@@ -23,7 +21,7 @@ import RubiksCube_agent as VI
 # except:
 #     pass
 
-TITLE = "Rubik's Cube MDP: A Markov Decision Process for the Rubik's Cube Game"
+TITLE = "Rubik's Cube Using Q-Learning: A Markov Decision Process for the Rubik's Cube Game"
 ACTIONS = [op.name for op in OPERATORS] + ['Exit']
 
 STATES_AND_EDGES = None
