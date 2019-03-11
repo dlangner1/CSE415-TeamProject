@@ -10,6 +10,7 @@ Add or change code wherever you see #*** ADD OR CHANGE CODE HERE ***
 
 '''
 
+from RubiksCube import *
 
 STATES = None;
 ACTIONS = None;
@@ -173,3 +174,31 @@ def extract_policy(S, A):
                 max_q_value = q_value
 
     return Policy
+
+
+# FEATURES
+
+# Action here is a given face to rotate
+def game_solved(state, action):
+    new_state = state.move(action)
+
+    if goal_test(new_state):
+        return 1
+    else:
+        return 0
+
+
+def face_c_solved(state, action):
+    new_state = state.move(action)
+
+    face_c = new_state.d['c']
+
+    return face_c[0] == face_c[1] and face_c[1] == face_c[2] \
+           and face_c[2] == face_c[3]
+
+
+
+
+
+
+
