@@ -65,30 +65,6 @@ def displayCube():
             cprimecounter += 1
 
 
-def updateStates():
-    global a, b, c, aprime, bprime, cprime, cur
-    a = cur.d['a']
-    b = cur.d['b']
-    c = cur.d['c']
-    aprime = cur.d['aprime']
-    bprime = cur.d['bprime']
-    cprime = cur.d['cprime']
-
-
-def shuffle_cube():
-    global a, b, c, aprime, bprime, cprime, cur
-    cur = cube.CREATE_INITIAL_STATE()
-    updateStates()
-    displayCube()
-
-
-def reset_state():
-    global a, b, c, aprime, bprime, cprime, cur
-    cur = cube.CREATE_CLEAN_STATE()
-    updateStates()
-    displayCube()
-
-
 def flipA():
     global a, b, c, aprime, bprime, cprime, cur
     cur = cur.move('a')
@@ -131,6 +107,46 @@ def flipCPrime():
     displayCube()
 
 
+def updateStates():
+    global a, b, c, aprime, bprime, cprime, cur
+    a = cur.d['a']
+    b = cur.d['b']
+    c = cur.d['c']
+    aprime = cur.d['aprime']
+    bprime = cur.d['bprime']
+    cprime = cur.d['cprime']
+
+
+def shuffle_cube():
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cube.CREATE_INITIAL_STATE()
+    updateStates()
+    displayCube()
+
+
+def q_learn():
+    agent.q_learn(1)
+
+
+best_move_text = ''
+
+def extract_policy():
+    global cur, best_move_text
+    best_action = agent.extract_policy(cur)
+    best_move_text = "Your best move is " + best_action
+    print(best_move_text)
+
+    tkinter.Label(window, text=best_move_text, font="Verdana 10 bold").grid(
+        row=24, column=10)
+
+
+def reset_state():
+    global a, b, c, aprime, bprime, cprime, cur
+    cur = cube.CREATE_CLEAN_STATE()
+    updateStates()
+    displayCube()
+
+
 tkinter.Button(window, text="Flip A", command=flipA).grid(row=12, column=10)
 tkinter.Button(window, text="Flip B", command=flipB).grid(row=14, column=10)
 tkinter.Button(window, text="Flip C", command=flipC).grid(row=16, column=10)
@@ -139,7 +155,10 @@ tkinter.Button(window, text="Flip BPrime", command=flipBPrime).grid(row=20, colu
 tkinter.Button(window, text="Flip CPrime", command=flipCPrime).grid(row=22, column=10)
 
 tkinter.Button(window, text="Shuffle Cube", command=shuffle_cube).grid(row=12, column=14)
-tkinter.Button(window, text="Reset", command=reset_state).grid(row=14, column=14)
+tkinter.Button(window, text="Q-Learn", command=q_learn).grid(row=14, column=14)
+tkinter.Button(window, text="Show Best Move", command=extract_policy).grid(row=16, column=14)
+tkinter.Button(window, text="Reset", command=reset_state).grid(row=18, column=14)
+
 
 displayCube()
 window.mainloop()
