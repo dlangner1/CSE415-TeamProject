@@ -20,12 +20,13 @@ GAMMA = 0.9
 
 WEIGHTS = None
 
+#initializes weights
 def generate_weights():
     global WEIGHTS
     # game solved, face_c_solved, top_layer, face_c_almost
     WEIGHTS = [100, 25, 25, 10]
 
-
+#returns tuple of features
 def get_feature_states(state):
     f1 = game_solved(state)
     f2 = face_c_solved(state)
@@ -33,7 +34,7 @@ def get_feature_states(state):
     f4 = face_c_almost_solved(state)
     return (f1, f2, f3, f4)
 
-
+#looks through immediate Q-values to find optimal policy
 def extract_policy(state):
     actions = sides
 
@@ -49,7 +50,7 @@ def extract_policy(state):
 
     return best_action
 
-
+#finds the maximum immediate value
 # state = sprime
 def value(state):
     actions = sides
@@ -62,7 +63,7 @@ def value(state):
 
     return max_val
 
-
+#returns the reward for a state action pair
 def reward(state, action):
     new_state = state.move(action)
 
@@ -71,7 +72,7 @@ def reward(state, action):
     else:
         return 100
 
-
+#returns the weighted sum of the features
 def get_q_value(state, action):
     global WEIGHTS
 
@@ -84,7 +85,7 @@ def get_q_value(state, action):
 
     return q_sum
 
-
+#updates q learning weights
 def q_learn(state, action):
     global GAMMA, ALPHA, WEIGHTS
     new_state = state.move(action)
@@ -95,14 +96,14 @@ def q_learn(state, action):
     for i in range(len(WEIGHTS)):
         WEIGHTS[i] = WEIGHTS[i] + (ALPHA * correction * new_features[i])
 
-
+#feature tests
 def game_solved(state):
     if goal_test(state):
         return 1
     else:
         return 0
 
-
+#feature tests
 def face_c_solved(state):
     face_c = state.d['c']
     if face_c[0] == face_c[1] == face_c[2] == face_c[3]:
@@ -110,7 +111,7 @@ def face_c_solved(state):
     else:
         return 0
 
-
+#feature tests
 def top_layer_solved(state):
 
     face_a = state.d['a']
@@ -128,7 +129,7 @@ def top_layer_solved(state):
     else:
         return 0
 
-
+#feature tests
 def face_c_almost_solved(state):
     face_c = state.d['c']
     comb1 = face_c[0] == face_c[1] != face_c[2] == face_c[3]

@@ -37,7 +37,7 @@ sides = ['a', 'aprime', 'b', 'bprime', 'c', 'cprime']
 
 
 # </COMMON_DATA>
-
+#state representation
 # <COMMON_CODE>
 class State:
     def __init__(self, d):
@@ -71,7 +71,7 @@ class State:
         for side in sides:
             news.d[side] = self.d[side][:]
         return news
-
+    #move definitions
     def move(self, face):
 
         new_state = self.copy()  # start with a deep copy.
@@ -140,7 +140,7 @@ class State:
         for i in range(4):
             new_face.append(face[3 - i])
         return new_face
-
+    #acts num_moves times on the current state
     def randomize(self, num_moves):
 
         new_state = self.copy()
@@ -151,7 +151,7 @@ class State:
 
         return new_state
 
-
+#defines a goal state
 def make_goal_state():
     global GOAL_STATE
     GOAL_STATE = State(
@@ -165,7 +165,9 @@ def make_goal_state():
 
 make_goal_state()
 
-
+#tests a state for the goal
+#goal states don't have to be the initial, all the sides just have to be
+#in the goal set
 def goal_test(s):
 
     global GOAL_STATE, sides
@@ -176,7 +178,7 @@ def goal_test(s):
                 match += 1
     return match == 6
 
-
+#returns goal message
 def goal_message(s):
     return "Cube is Solved!"
 
@@ -193,7 +195,7 @@ class Operator:
 # </COMMON_CODE>
 
 # <INITIAL_STATE>
-
+#clean cube
 def CREATE_CLEAN_STATE():
     return State({'a': [0, 0, 0, 0],
                   'b': [1, 1, 1, 1],
@@ -202,7 +204,7 @@ def CREATE_CLEAN_STATE():
                   'bprime': [4, 4, 4, 4],
                   'cprime': [5, 5, 5, 5]})
 
-
+#randomly shuffled initial cube
 def CREATE_INITIAL_STATE():
     return CREATE_CLEAN_STATE().randomize(NUM_RANDOM_GENERATION_MOVES)
 
