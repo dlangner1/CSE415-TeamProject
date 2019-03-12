@@ -31,7 +31,7 @@ import random
 # <COMMON_DATA>
 
 NUM_RANDOM_GENERATION_MOVES = 20
-
+GOAL_STATE = None
 
 sides = ['a', 'aprime', 'b', 'bprime', 'c', 'cprime']
 

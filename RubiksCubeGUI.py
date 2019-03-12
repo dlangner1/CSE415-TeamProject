@@ -110,6 +110,9 @@ def flipAPrime():
 
 def flipBPrime():
     global a, b, c, aprime, bprime, cprime, cur
+
+    agent.q_learn(cur, 'bprime')
+
     cur = cur.move('bprime')
     updateStates()
     displayCube()
@@ -117,6 +120,9 @@ def flipBPrime():
 
 def flipCPrime():
     global a, b, c, aprime, bprime, cprime, cur
+
+    agent.q_learn(cur, 'cprime')
+
     cur = cur.move('cprime')
     updateStates()
     displayCube()
@@ -139,8 +145,8 @@ def shuffle_cube():
     displayCube()
 
 
-def run_agent_5_times():
-    run_agent(5)
+def run_agent_1_time():
+    run_agent(1)
 
 
 def run_agent_10_times():
@@ -170,6 +176,9 @@ def run_agent(num_times):
         else:
             flipCPrime()
 
+    tkinter.Label(window, text="Weights: " + str(agent.WEIGHTS), font="Verdana 10 bold").grid(
+        row=24, column=14)
+
 
 best_move_text = ''
 def extract_policy():
@@ -196,14 +205,13 @@ tkinter.Button(window, text="Flip APrime", command=flipAPrime).grid(row=18, colu
 tkinter.Button(window, text="Flip BPrime", command=flipBPrime).grid(row=20, column=10)
 tkinter.Button(window, text="Flip CPrime", command=flipCPrime).grid(row=22, column=10)
 
-tkinter.Button(window, text="Run Q-Learn Agent 5 times", command=run_agent_5_times).grid(row=12, column=14)
+tkinter.Button(window, text="Run Q-Learn Agent 1 time", command=run_agent_1_time).grid(row=12, column=14)
 tkinter.Button(window, text="Run Q-Learn Agent 10 times", command=run_agent_10_times).grid(row=14, column=14)
 tkinter.Button(window, text="Run Q-Learn Agent 20 times", command=run_agent_20_times).grid(row=16, column=14)
 tkinter.Button(window, text="Show Best Move", command=extract_policy).grid(row=18, column=14)
 
 tkinter.Button(window, text="Shuffle Cube", command=shuffle_cube).grid(row=20, column=14)
 tkinter.Button(window, text="Reset", command=reset_state).grid(row=22, column=14)
-
 
 displayCube()
 window.mainloop()

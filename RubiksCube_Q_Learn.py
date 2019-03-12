@@ -12,24 +12,13 @@ Add or change code wherever you see #*** ADD OR CHANGE CODE HERE ***
 
 from RubiksCube import *
 
-STATES = None
-ACTIONS = None
-UQV_callback = None
-is_valid_goal_state = None
-Terminal_state = None
-USE_EXPLORATION_FUNCTION = None
-INITIAL_STATE = None
-
 ALPHA = 0.5
 CUSTOM_ALPHA = False
 EPSILON = 0.5
 CUSTOM_EPSILON = False
 GAMMA = 0.9
 
-ALL_STATES = []
 WEIGHTS = None
-Q_VALUES = {}
-
 
 def generate_weights():
     global WEIGHTS
