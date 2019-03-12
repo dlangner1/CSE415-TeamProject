@@ -25,7 +25,7 @@ aprime = cur.d['aprime']
 bprime = cur.d['bprime']
 cprime = cur.d['cprime']
 
-
+#updates the cube in the GUI
 def displayCube():
     colors = {0: "blue", 1: "red", 2: "yellow", 3: "green", 4: "orange", 5: "purple"}
 
@@ -68,6 +68,7 @@ def displayCube():
             cprimecounter += 1
 
 
+#flips A, applies Q learning, and performs the necessary GUI changes
 def flipA():
     global a, b, c, aprime, bprime, cprime, cur
 
@@ -77,7 +78,7 @@ def flipA():
     updateStates()
     displayCube()
 
-
+#flips B, applies Q learning, and performs the necessary GUI changes
 def flipB():
     global a, b, c, aprime, bprime, cprime, cur
 
@@ -87,7 +88,7 @@ def flipB():
     updateStates()
     displayCube()
 
-
+#flips C, applies Q learning, and performs the necessary GUI changes
 def flipC():
     global a, b, c, aprime, bprime, cprime, cur
 
@@ -97,7 +98,7 @@ def flipC():
     updateStates()
     displayCube()
 
-
+#flips APrime, applies Q learning, and performs the necessary GUI changes
 def flipAPrime():
     global a, b, c, aprime, bprime, cprime, cur
 
@@ -107,7 +108,7 @@ def flipAPrime():
     updateStates()
     displayCube()
 
-
+#flips BPrime, applies Q learning, and performs the necessary GUI changes
 def flipBPrime():
     global a, b, c, aprime, bprime, cprime, cur
 
@@ -117,7 +118,7 @@ def flipBPrime():
     updateStates()
     displayCube()
 
-
+#flips CPrime, applies Q learning, and performs the necessary GUI changes
 def flipCPrime():
     global a, b, c, aprime, bprime, cprime, cur
 
@@ -127,7 +128,7 @@ def flipCPrime():
     updateStates()
     displayCube()
 
-
+#updates the global values of the current state
 def updateStates():
     global a, b, c, aprime, bprime, cprime, cur
     a = cur.d['a']
@@ -137,26 +138,26 @@ def updateStates():
     bprime = cur.d['bprime']
     cprime = cur.d['cprime']
 
-
+#randomly moves a clean cube into a shuffled cube
 def shuffle_cube():
     global a, b, c, aprime, bprime, cprime, cur
     cur = cube.CREATE_INITIAL_STATE()
     updateStates()
     displayCube()
 
-
+#applies Q-learning to a random move
 def run_agent_1_time():
     run_agent(1)
 
-
+#applies Q-learning to 10 random moves
 def run_agent_10_times():
     run_agent(10)
 
-
+#applies Q-learning to 20 random moves
 def run_agent_20_times():
     run_agent(20)
 
-
+#applies Q-learning to num_times random moves
 def run_agent(num_times):
     actions = cube.sides
 
@@ -179,7 +180,7 @@ def run_agent(num_times):
     tkinter.Label(window, text="Weights: " + str(agent.WEIGHTS), font="Verdana 10 bold").grid(
         row=24, column=14)
 
-
+#finds the move with the largest immediate Q value
 best_move_text = ''
 def extract_policy():
     global cur, best_move_text
@@ -190,14 +191,14 @@ def extract_policy():
     tkinter.Label(window, text=best_move_text, font="Verdana 10 bold").grid(
         row=24, column=10)
 
-
+#resets the GUI and current state to the clean cube state
 def reset_state():
     global a, b, c, aprime, bprime, cprime, cur
     cur = cube.CREATE_CLEAN_STATE()
     updateStates()
     displayCube()
 
-
+#GUI interactive buttons
 tkinter.Button(window, text="Flip A", command=flipA).grid(row=12, column=10)
 tkinter.Button(window, text="Flip B", command=flipB).grid(row=14, column=10)
 tkinter.Button(window, text="Flip C", command=flipC).grid(row=16, column=10)
